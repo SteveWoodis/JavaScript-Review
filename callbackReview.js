@@ -3,11 +3,16 @@
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
+var first = function(names, callback){
+          var firstone = names[0];
+          return callback(firstone);
+          
+          };
+
 first(names, function(firstName){
   console.log('The first name in names is ', firstName)
 });
-
-
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -16,6 +21,12 @@ first(names, function(firstName){
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+var last = function(names, callback){
+ var lName = names[names.length-1];
+    return callback(lName);
+}
+
+
 last(names, function(lastName){
   console.log('The last name in names is ', lastName);
 });
@@ -29,6 +40,17 @@ last(names, function(lastName){
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
+var contains = function(string, names, callback){
+    for(var i = 0; i < names.length; i++){
+     if(string === names[i]){   
+    
+    return callback(true);
+     }
+    }
+}
+
+
 contains('Colt', names, function(yes){
   if(yes){
     console.log('Colt is in the array');
@@ -45,8 +67,17 @@ contains('Colt', names, function(yes){
 
 
 
-var numbers = [1,2,3,4,5];
+
 //Produces a new array of values by mapping each value in list through a transformation function
+var numbers = [1,2,3,4,5];
+
+var map = function(callback){
+    for(var i = 0; i < numbers.length; i++){
+        var num = numbers[i];   
+    }
+    return callback(num);
+}
+
 map(numbers, function(num){
   return num * 2; //returns an array of [2,4,6,8,10]
 });
